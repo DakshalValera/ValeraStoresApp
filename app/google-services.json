@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "832928779858",
+    "project_id": "valera-stores-fb14c",
+    "storage_bucket": "valera-stores-fb14c.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:832928779858:android:d7539a4eb69863d465d98b",
+        "android_client_info": {
+          "package_name": "com.example.valerastores"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "832928779858-g5rmdedhti7fphocgk7in23fmn4k1l7a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBi_AdwnN6idAwuogo73odzvwb3kbjkSnQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "832928779858-g5rmdedhti7fphocgk7in23fmn4k1l7a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
