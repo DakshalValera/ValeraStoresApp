@@ -3,7 +3,6 @@ package com.example.valerastores;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -48,35 +47,26 @@ public class DetailActivity extends AppCompatActivity {
         productweight.setText(weight);
         Picasso.get().load(image).into(productimage);
 
-        btnemail.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent email = new Intent(Intent.ACTION_SEND);
-                email.putExtra(Intent.EXTRA_EMAIL,new String[]{"dakshal152005valera@gmail.com"});
-                email.putExtra(Intent.EXTRA_SUBJECT, "Confirm Order to Valera Stores");
-                email.putExtra(Intent.EXTRA_TEXT,"I Confirm my Order to Valera Stores For "+name+" With Price "+price+" and Weight are "+weight);
-                email.setType("message/rfc822");
-                startActivity(email);
-            }
+        btnemail.setOnClickListener(v -> {
+            Intent email = new Intent(Intent.ACTION_SEND);
+            email.putExtra(Intent.EXTRA_EMAIL,new String[]{"dakshal152005valera@gmail.com"});
+            email.putExtra(Intent.EXTRA_SUBJECT, "Confirm Order to Valera Stores");
+            email.putExtra(Intent.EXTRA_TEXT,"I Confirm my Order to Valera Stores For "+name+" With Price "+price+" and Weight is "+weight);
+            email.setType("message/rfc822");
+            startActivity(email);
         });
 
-        addtocart.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i =new Intent(Intent.ACTION_VIEW);
-                i.setData(Uri.parse("smsto:7383276866"));
-                i.putExtra("sms_body","I Confirm my Order to Valera Stores For "+name+" With Price "+price+" and Weight are "+weight);
-                startActivity(i);
-            }
+        addtocart.setOnClickListener(v -> {
+            Intent i =new Intent(Intent.ACTION_VIEW);
+            i.setData(Uri.parse("smsto:7383276866"));
+            i.putExtra("sms_body","I Confirm my Order to Valera Stores For "+name+" With Price "+price+" and Weight is "+weight);
+            startActivity(i);
         });
 
-        goback.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent back = new Intent(DetailActivity.this,MainActivity.class);
-                startActivity(back);
-                finish();
-            }
+        goback.setOnClickListener(v -> {
+            Intent back = new Intent(DetailActivity.this,MainActivity.class);
+            startActivity(back);
+            finish();
         });
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
